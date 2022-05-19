@@ -8,10 +8,10 @@ html = requests.get(f"https://github.com/{username}")
 
 soup = BeautifulSoup(html.text, "lxml")
 
-Repositories = soup.find('a', href="/AkioKiyota?tab=repositories")
-Projects = soup.find("a", href="/AkioKiyota?tab=projects&type=beta")
-Packages = soup.find("a", href="/AkioKiyota?tab=packages")
-Stars = soup.find("a", href="/AkioKiyota?tab=stars")
+Repositories = soup.find('a', href=f"/{username}?tab=repositories")
+Projects = soup.find("a", href=f"/{username}?tab=projects&type=beta")
+Packages = soup.find("a", href=f"/{username}?tab=packages")
+Stars = soup.find("a", href=f"/{username}?tab=stars")
 
 
 Count_repositories = Repositories.find("span", class_="Counter")
